@@ -1,0 +1,18 @@
+name: Setup KernelSU-Next
+
+on:
+  push:
+    branches:
+      - main  # Ubah dengan nama branch yang sesuai jika perlu
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install KernelSU-Next
+      run: |
+        curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -
